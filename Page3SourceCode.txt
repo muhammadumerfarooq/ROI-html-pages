@@ -1,0 +1,751 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title> 
+	
+    <script language="JavaScript" type="text/javascript">
+	
+	function nextpage()
+	{
+
+var Average_Monthly_Revenue = localStorage['Average_Monthly_Revenue'];
+//localStorage.removeItem( 'Average_Monthly_Revenue' );
+
+var NumberofVehicles = localStorage['NumberofVehicles'];
+//localStorage.removeItem( 'NumberofVehicles' );
+
+var BillingRate_Customers = localStorage['BillingRate_Customers'];
+//localStorage.removeItem( 'BillingRate_Customers' );
+
+var payrate_employees = localStorage['payrate_employees'];
+//localStorage.removeItem( 'payrate_employees' );
+
+
+var estimated_MPG = localStorage['estimated_MPG'];
+//localStorage.removeItem( 'estimated_MPG' );
+
+
+var cost_of_a_gallon = localStorage['cost_of_a_gallon'];
+//localStorage.removeItem( 'cost_of_a_gallon' );
+
+var VehicleInvestment = localStorage['VehicleInvestment'];
+//localStorage.removeItem( 'VehicleInvestment' );
+
+var ratio = localStorage['ratio'];
+//localStorage.removeItem( 'ratio' );
+
+
+ document.getElementById('NumberofVehicles').innerHTML = NumberofVehicles;
+ document.getElementById('estimated_MPG').innerHTML = estimated_MPG;
+ document.getElementById('cost_of_a_gallon').innerHTML = cost_of_a_gallon;
+ document.getElementById('VehicleInvestment').innerHTML = VehicleInvestment;
+ document.getElementById('BillingRate_Customers').innerHTML = BillingRate_Customers;
+ document.getElementById('Average_Monthly_Revenue').innerHTML = Average_Monthly_Revenue;
+	
+	
+ document.getElementById('pervehicleOutput').innerHTML = 'Additional jobs added per week/per vehicle';
+	
+	
+ document.getElementById('pervehicle').innerHTML = 1;
+	
+	
+ document.getElementById('BillingRate_CustomersOutput').innerHTML = 'Average Billing Rate for Customers';
+	
+	
+ document.getElementById('BillingRate_Customers').innerHTML = BillingRate_Customers;
+	
+	
+
+ 
+	sum=1*BillingRate_Customers*NumberofVehicles;
+ document.getElementById('Billing_Per_MonthOutput').innerHTML = 'Total Additional Billing Per Month';
+ 
+ document.getElementById('Billing_Per_Month').innerHTML = sum;
+ 
+ 
+ 
+ 
+  s=(1*(NumberofVehicles*payrate_employees*1))*2
+ document.getElementById('TotalPayrollOutput').innerHTML = 'Total Payroll';
+ 
+ document.getElementById('TotalPayroll').innerHTML = s;
+ 
+ 
+ document.getElementById('payrate_employeesOutput').innerHTML = 'Average hourly pay rate for employees';
+ document.getElementById('payrate_employees').innerHTML = payrate_employees;
+ 
+ 
+ 
+ //payrate_employees
+ 
+ 
+ document.getElementById('employeepermonthOutput').innerHTML = 'Hours of pay reduced per field employee per month';
+ document.getElementById('employeepermonth').innerHTML = 1;
+ 
+ 
+ 
+ document.getElementById('hoursareregularOutput').innerHTML = 'Assumed hours are regular, not overtime';
+ document.getElementById('hoursareregular').innerHTML = "Regular";
+ 
+ 
+ 
+ //
+ document.getElementById('TotalPayrollOutput1').innerHTML = 'Total Payroll';
+ 
+ document.getElementById('TotalPayroll1').innerHTML = s;
+ 
+ 
+ document.getElementById('payrate_employeesOutput1').innerHTML = 'Average hourly pay rate for employees';
+ document.getElementById('payrate_employees1').innerHTML = payrate_employees;
+ 
+ 
+ 
+ //payrate_employees
+ 
+ 
+ document.getElementById('employeepermonthOutput1').innerHTML = 'Hours of pay reduced per field employee per month';
+ document.getElementById('employeepermonth1').innerHTML = 1;
+ 
+ 
+ 
+ document.getElementById('hoursareregularOutput1').innerHTML = 'Assumed hours are regular, not overtime';
+ document.getElementById('hoursareregular1').innerHTML = "Regular";
+ 
+ 
+ //
+ 
+ 
+
+
+ document.getElementById('Average_Monthly_RevenueOutput').innerHTML = 'Average Monthly Revenue';
+ document.getElementById('Average_Monthly_Revenue').innerHTML = Average_Monthly_Revenue;
+
+ 
+ 
+
+
+ document.getElementById('billingofmaterialOutput').innerHTML = 'Missed revenue due to incorrect billing of material ';
+ document.getElementById('billingofmaterial').innerHTML = "1.00%";
+
+ 
+ su=Average_Monthly_Revenue*(1/100);
+ document.getElementById('AdditionalrevenuepotentialOutput').innerHTML = 'Additional revenue potential';
+ 
+ document.getElementById('Additionalrevenuepotential').innerHTML = su;
+ 
+ 
+ /////////
+ 
+ document.getElementById('vehicleperdayOutput').innerHTML = 'Miles of travel reduced per vehicle per day?';
+ 
+ document.getElementById('vehicleperday').innerHTML = 1;
+ 
+ 
+ 
+ 
+ document.getElementById('reducedpervehicleOutput').innerHTML = 'Idling minutes  reduced per vehicle per day?';
+ 
+ document.getElementById('reducedpervehicle').innerHTML = 1
+ 
+ 
+ document.getElementById('estimated_MPGOutput').innerHTML = 'Estimated MPG of your vehicles?';
+ 
+ document.getElementById('estimated_MPG').innerHTML = estimated_MPG;
+ 
+ 
+ 
+ 
+ document.getElementById('cost_of_a_gallonOutput').innerHTML = 'Cost of a gallon of fuel?';
+ 
+ document.getElementById('cost_of_a_gallon').innerHTML = cost_of_a_gallon;
+ 
+ 
+ 
+  summ=cost_of_a_gallon*((NumberofVehicles*1)/estimated_MPG)*(365/12)+((((NumberofVehicles*1)/(60*25))/estimated_MPG)*cost_of_a_gallon)*(365/12);
+ document.getElementById('SavingsPerMonthOuptut').innerHTML = 'Total Fuel Cost Savings Per Month';
+ 
+ document.getElementById('SavingsPerMonth').innerHTML = summ;
+ 
+ /////
+ 
+ 
+ 
+ 
+ document.getElementById('VehicleInvestmentOutput').innerHTML = 'Monthly Per Vehicle Investment';
+ 
+ document.getElementById('VehicleInvestment').innerHTML = VehicleInvestment;
+ 
+ 
+ 
+ adding=summ+s+su+sum;
+ 
+ 
+  
+ 
+ document.getElementById('CompleteMonthlySavingsOutput').innerHTML = 'Complete Monthly Savings';
+ 
+ document.getElementById('CompleteMonthlySavings').innerHTML = adding;
+ 
+ monthly=VehicleInvestment*NumberofVehicles;
+ 
+ 
+ document.getElementById('CompleteMonthlyInvestmentOutput').innerHTML = 'Complete Monthly Investment';
+ 
+ document.getElementById('CompleteMonthlyInvestment').innerHTML = monthly;
+ 
+ 
+
+return_monthly = adding-monthly;
+ 
+ document.getElementById('CompleteMonthlyReturnOutput').innerHTML = ' Complete Monthly Return';
+ 
+ document.getElementById('CompleteMonthlyReturn').innerHTML = return_monthly;
+
+ 
+ //var ratio = localStorage['ratio'];
+//localStorage.removeItem( 'ratio' );
+
+
+
+ document.getElementById('RatioInvestment').innerHTML = "                                                     "+ratio + "             :             "+1;
+ 
+
+	
+	}
+     
+function backpage()
+{
+ window.history.go(-1);
+}
+	 
+/*
+	 function Insert()
+        {
+
+		            var vehicle = document.getElementById('vehicles').value;
+                 //   var driverhour = document.getElementById('Rev_hbox').value;
+			//		var driverrate = document.getElementById('Rev_bbox').value;
+				//	var labouravghour = document.getElementById('Rev_hbox1').value;
+					var labourpayred = document.getElementById('Rev_bbox1').value;
+					var officeavghour = document.getElementById('Rev_hbox2').value;
+					var officepayred = document.getElementById('Rev_bbox3').value;
+					var partsold = document.getElementById('Rev_hbox3').value;
+					var missedrev = document.getElementById('Rev_bbox5').value;
+					var vehicletravel = document.getElementById('Rev_hbox4').value;
+					var vehicleminutes = document.getElementById('Rev_bbox6').value;
+					var vehicleMPG = document.getElementById('Rev_bbox8').value;
+					var fuelcost = document.getElementById('Rev_bbox9').value;
+					var labourpaid = document.getElementById('labourpaid').value;
+					var labourofficepaid = document.getElementById('labourofficepaid').value;
+					
+		
+            //var vehicle = document.getElementById('vehicles').value;
+			//alert(vehicle);
+            //var txtname = document.getElementById('txtname').value;
+            //var txtsalary = document.getElementById('txtsalary').value;
+            //var txtcity = document.getElementById('txtcity').value;
+			if ((labourpaid=="Hourly" || labourpaid=="Overtime") && ( labourofficepaid=="Hourly" || labourofficepaid=="Overtime"))
+			{ 
+            if (vehicle.length != 0 && driverhour.length !=0 && driverrate.length !=0&& labouravghour.length !=0 &&
+          			labourpayred.length != 0 && officeavghour.length != 0 && officepayred.length != 0 && partsold.length != 0 &&
+					missedrev.length != 0 && vehicletravel.length != 0 && vehicleminutes.length != 0 && vehicleMPG.length != 0 &&
+					fuelcost.length != 0 && labourpaid.length != 0 && labourofficepaid.length != 0 )
+            {
+                var connection = new ActiveXObject("ADODB.Connection");
+				var connectionstring= "Provider=Microsoft.Jet.OLEDB.4.0;Data Source = C:\\Users\\Umer\\Desktop\\WebSite5\\db.mdb;Persist Security Info=False"; //"Data Source=localhost;Initial Catalog=sakila;User ID=root;Password=123456;Provider=SQLOLEDB";
+				
+
+                connection.Open(connectionstring);
+                var rs = new ActiveXObject("ADODB.Recordset");
+                //rs.Open("insert into Emp_Info values('" + txtid + "','" + txtname + "','" + txtsalary + "','" + txtcity + "')", connection);
+			//	rs.Open("insert into student values(" + 45 + "," + 54 + ")", connection);
+			//rs.Open("update student set age = 555 where ID = 45",connection);
+				rs.Open("update roi set Vehicles = "+ vehicle +", driverhour = "+ driverhour +", driverrate = "+ driverrate +", labouravghour = "+ labouravghour +
+				                                    ", labourpayred = "+ labourpayred + ", officeavghour = "+ officeavghour +", officepayred = " + officepayred +
+													", partsold = "+ partsold +", missedrev = "+ missedrev +", vehicletravel = "+vehicletravel+
+													", vehicleminutes = "+vehicleminutes +", vehicleMPG = "+ vehicleMPG +", fuelcost = "+ fuelcost +
+													 ", labourpaid = " + labourpaid +", labourofficepaid = "+ labourofficepaid + " where ID = 0",connection);
+				//,'" + txtsalary + "','" + txtcity + "')", connection);
+				
+                alert("Insert Record Successfuly");
+                
+                connection.close();
+            }
+			}
+            else
+            {
+                alert("Please Enter Data");
+            }
+        }
+        function ShowAll()
+        {
+              /*  var connection = new ActiveXObject("ADODB.Connection");
+
+				var connectionstring= "Provider=Microsoft.Jet.OLEDB.4.0;Data Source = C:\\Users\\Umer\\Desktop\\WebSite5\\db.mdb;Persist Security Info=False";
+                connection.Open(connectionstring);
+                var rs = new ActiveXObject("ADODB.Recordset");
+                rs.Open("select * from roi ", connection);
+                rs.MoveFirst();
+				
+  //              var span = document.createElement("span");
+//span.style.position = "absolute";
+
+
+             //   span.style.color = "Blue";
+			 document.getElementById('spa').style.fontSize ="small";
+                document.getElementById('spa').innerText = "  Vehicles " + "  driverhour " + "  labouravghour" + " labourpayred "+ " officeavghour "+ " officepayred " + " partsold "+ " missedrev "+" vehicletravel "+ " vehicleminutes "+ " vehicleMPG "+" fuelcost "+" labourpaid "+" labourofficepaid ";
+                //document.body.appendChild(span);
+               
+			   while (!rs.eof)
+                {
+                  //  var span = document.createElement("span");
+                    //span.style.color = "green";
+					
+                    document.getElementById('spanid').innerText = "\n " + rs.fields(0) + "    |  " + rs.fields(1) + "    |  " + rs.fields(2) + "    |  " + rs.fields(3)+ "   | " + rs.fields(4) + "    |  " + rs.fields(5) + "    |  " + rs.fields(6) + "    |  " + rs.fields(7)+ "    |  " + rs.fields(8)+ "    |  " + rs.fields(9)+ "    |  " + rs.fields(10)+ "    |  " + rs.fields(11)+ "    |  " + rs.fields(12)+ "    |  " + rs.fields(14)+ "    |  " + rs.fields(15);
+                    //document.body.appendChild(span);
+                    rs.MoveNext();
+                }
+                rs.close();
+                connection.close();*/
+            /*}*/  
+  window.onload = nextpage;
+			</script>
+
+ </head>
+	
+</head>
+
+<body style="height: 431px">
+
+</br>
+    	<table id="box-table-a" summary="Employee Pay Sheet">
+	
+          
+    	<tr>
+        <td>
+		  Number of Vehicles in Your Fleet 
+		</td>
+		
+        	<td>
+		
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+		     <label id="NumberofVehicles"  style="height:20px;width:280px;"></label>
+        </td>
+		</tr>
+      
+</table>
+
+	
+	
+	<table id="box-table-a" summary="Employee Pay Sheet">
+	
+<tr>
+
+<td>
+		   <label id="pervehicleOutput"  style="height:20px;width:280px;"></label>
+		  </td>
+		  
+        	<td>
+	
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+	 <label id="pervehicle"  style="height:20px;width:280px;"></label>
+		 </p></td>
+</tr>
+	<tr>
+       
+	   <td>
+	      <label id="BillingRate_CustomersOutput"  style="height:20px;width:280px;"></label>
+		
+	   </td>
+           
+       
+        	<td>
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp   <label id="BillingRate_Customers"  style="height:20px;width:280px;"></label>
+		  </td>
+		  
+        </tr>
+    <tr>
+        	<td>	 <label id="Billing_Per_MonthOutput"  style="height:20px;width:280px;"></label>
+	</td>
+           
+
+        	<td>
+			
+		 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<label id="Billing_Per_Month"  style="height:20px;width:280px;"></label>
+		 </p></td>
+    
+    </tr>
+    
+
+    
+</table>
+
+
+
+<table id="box-table-b" summary="LABOURCOST  (Field Employees)">
+	<tbody>
+    	<tr>
+        	<td>
+				    <label id="payrate_employeesOutput"  style="height:20px;width:280px;"></label>
+    
+			</td>
+           
+       
+        	<td>
+		    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="payrate_employees"  style="height:20px;width:280px;"></label>
+        </td></tr>
+		<tr>
+        	<td>
+				    <label id="employeepermonthOutput"  style="height:20px;width:280px;"></label>
+    
+			</td>
+           
+       
+        	<td>
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <label id="employeepermonth"  style="height:20px;width:280px;"></label>
+        </td></tr>
+		<tr>
+        	<td>
+        
+				    <label id="hoursareregularOutput"  style="height:20px;width:280px;"></label>
+    
+			</td>
+           
+       
+        	<td>
+			
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    <label id="hoursareregular"  style="height:20px;width:280px;"></label>
+        </td></tr>
+		
+		<tr>
+        	<td>	 <label id="TotalPayrollOutput"  style="height:20px;width:280px;"></label>
+	</td>
+           
+
+        	<td>
+			
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 <label id="TotalPayroll"  style="height:20px;width:280px;"></label>
+		 </p></td>
+    
+    </tr>
+    
+
+  
+    </tbody>
+</table>
+
+
+
+
+<table id="box-table-bb" summary="LABOURCOST  (Office)">
+	<tbody>
+    	<tr>
+        	<td>
+				    <label id="payrate_employeesOutput1"  style="height:20px;width:280px;"></label>
+    
+			</td>
+           
+       
+        	<td>
+			
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    <label id="payrate_employees1"  style="height:20px;width:280px;"></label>
+        </td></tr>
+		<tr>
+        	<td>
+				    <label id="employeepermonthOutput1"  style="height:20px;width:280px;"></label>
+    
+			</td>
+           
+       
+        	<td>
+			
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+		    <label id="employeepermonth1"  style="height:20px;width:280px;"></label>
+        </td></tr>
+		<tr>
+        	<td>
+        
+				    <label id="hoursareregularOutput1"  style="height:20px;width:280px;"></label>
+    
+			</td>
+           
+       
+        	<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    <label id="hoursareregular1"  style="height:20px;width:280px;"></label>
+        </td></tr>
+		
+		<tr>
+        	<td>	 <label id="TotalPayrollOutput1"  style="height:20px;width:280px;"></label>
+	</td>
+           
+
+        	<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 <label id="TotalPayroll1"  style="height:20px;width:280px;"></label>
+		 </p></td>
+    
+    </tr>
+    
+
+  
+    </tbody>
+</table>
+
+
+
+
+<table id="box-table-c" summary="LABOURCOST  (Field Employees)">
+	<tbody>
+    	<tr>
+        	<td>
+			
+		     <label id="Average_Monthly_RevenueOutput"  style="height:20px;width:280px;"></label>
+			</td>
+           
+       
+        	<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		     <label id="Average_Monthly_Revenue"  style="height:20px;width:280px;"></label>
+		</td>
+        </tr>
+    
+  <tr>
+        	<td>
+			
+		     <label id="billingofmaterialOutput"  style="height:20px;width:280px;"></label>
+			</td>
+           
+       
+        	<td>
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     <label id="billingofmaterial"  style="height:20px;width:280px;"></label>
+		</td>
+        </tr>
+        <tr>
+        	<td>	 <label id="AdditionalrevenuepotentialOutput"  style="height:20px;width:280px;"></label>
+	</td>
+           
+
+        	<td>
+		 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="Additionalrevenuepotential"  style="height:20px;width:280px;"></label>
+		 </p></td>
+    
+    </tr>
+    	
+    </tbody>
+</table>
+
+
+
+
+
+<table id="box-table-d" summary="LABOURCOST  (Field Employees)">
+	<tbody>
+	
+	
+	
+    	<tr>
+        	<td>
+		     <label id="vehicleperdayOutput"  style="height:20px;width:280px;"></label></td>
+           
+       
+        	<td>
+		 
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     <label id="vehicleperday"  style="height:20px;width:280px;"></label>   
+</td>    
+    </tr>
+    
+    	
+		<tr>
+        	<td>
+		     <label id="reducedpervehicleOutput"  style="height:20px;width:280px;"></label></td>
+           
+       
+        	<td>
+		 
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     <label id="reducedpervehicle"  style="height:20px;width:280px;"></label>   
+</td>    
+    </tr>
+    
+	
+		<tr>
+        	<td>
+		     <label id="estimated_MPGOutput"  style="height:20px;width:280px;"></label></td>
+           
+       
+        	<td>
+		&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		     <label id="estimated_MPG"  style="height:20px;width:280px;"></label>   
+</td>    
+    </tr>
+      
+	  <tr>
+        	<td>
+		     <label id="cost_of_a_gallonOutput"  style="height:20px;width:280px;"></label>  </td></td>
+           
+       
+        	<td>
+		 
+		&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		     <label id="cost_of_a_gallon"  style="height:20px;width:280px;"></label>  </td>
+        </tr>
+		
+		
+		 <tr>
+        	<td>	 <label id="SavingsPerMonthOuptut"  style="height:20px;width:280px;"></label>
+	</td>
+           
+
+        	<td>
+		&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		 <label id="SavingsPerMonth"  style="height:20px;width:280px;"></label>
+		 </p></td>
+    
+    </tr>
+    </tbody>
+</table>
+
+
+
+<table id="box-table-d" summary="LABOURCOST  (Field Employees)">
+	<tbody>
+    	<tr>
+        	<td>
+		     <label id="VehicleInvestmentOutput"  style="height:20px;width:280px;"></label>  </td></td>
+           
+       
+        	<td>
+		 
+		&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		     <label id="VehicleInvestment"  style="height:20px;width:280px;"></label>  </td>
+        </tr>
+      
+		 <tr>
+        	<td>	 <label id="CompleteMonthlySavingsOutput"  style="height:20px;width:280px;"></label>
+	</td>
+           
+
+        	<td>
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label id="CompleteMonthlySavings"  style="height:20px;width:280px;"></label>
+		 </p></td>
+    
+    </tr>
+	
+	
+		 <tr>
+        	<td>	 <label id="CompleteMonthlyInvestmentOutput"  style="height:20px;width:280px;"></label>
+	</td>
+           
+
+        	<td>
+			
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 <label id="CompleteMonthlyInvestment"  style="height:20px;width:280px;"></label>
+		 </p></td>
+    
+    </tr>
+	
+	<tr>
+        	<td>	 <label id="CompleteMonthlyReturnOutput"  style="height:20px;width:280px;"></label>
+	</td>
+           
+
+        	<td>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		 <label id="CompleteMonthlyReturn"  style="height:20px;width:280px;"></label>
+		 </p></td>
+    
+    </tr>
+	
+	</tbody>
+</table>
+
+
+<table id="box-table-E" summary="LABOURCOST  (Field Employees)">
+	<tbody>
+    	
+<tr> 
+<td>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<h4> Ration Between Complete Monthly Savings and Complete Monthly Investment  </h4>
+</td>
+</tr>	
+		 <tr>
+           
+
+        	<td>
+		 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp 
+	
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp 
+    
+<label id="RatioInvestment"  style="height:20px;width:280px;"></label>
+		</p></td>
+    
+    </tr>
+	
+	
+	</tbody>
+</table>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <input id="Back" type="button" value="Back" onclick="backpage()" style="background-color:lightblue;width:100px;height:30px;font-family:Lucida Sans Unicode;font-size:15px"/>
+
+	
+
+	
+	
+	</br>
+			
+			</br>
+			</br>
+			</br>
+	
+
+
+
+
+   </body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>  
+	<script language="JavaScript" type="text/javascript">
+	
+       
+	   function page()
+	   {
+	 
+var Average_Monthly_Revenue = localStorage['Average_Monthly_Revenue'];
+//localStorage.removeItem( 'Average_Monthly_Revenue' );
+
+var NumberofVehicles = localStorage['NumberofVehicles'];
+//localStorage.removeItem( 'NumberofVehicles' );
+
+var BillingRate_Customers = localStorage['BillingRate_Customers'];
+//localStorage.removeItem( 'BillingRate_Customers' );
+
+var payrate_employees = localStorage['payrate_employees'];
+//localStorage.removeItem( 'payrate_employees' );
+
+
+var estimated_MPG = localStorage['estimated_MPG'];
+//localStorage.removeItem( 'estimated_MPG' );
+
+
+var cost_of_a_gallon = localStorage['cost_of_a_gallon'];
+//localStorage.removeItem( 'cost_of_a_gallon' );
+
+var VehicleInvestment = localStorage['VehicleInvestment'];
+//localStorage.removeItem( 'VehicleInvestment' );
+
+var ratio = localStorage['ratio'];
+//localStorage.removeItem( 'ratio' );
+
+
+
+ document.getElementById('RatioInvestment').innerHTML = "                                                     "+ratio + "             :             "+1;
+ 
+
+ 
+
+ }
+ function backpage()
+ {
+ 
+    //window.open("roi.html");
+	 //  window.history.back();
+ window.history.go(-1);
+ }
+ function submitrecord()
+{
+var FirstName = document.getElementById('FirstName').value;
+	 var LastName = document.getElementById('LastName').value;
+
+	  var Company = document.getElementById('Company').value;
+ var Email = document.getElementById('Email').value;
+ var Phone = document.getElementById('Phone').value;
+ var Noof_Vechicles = document.getElementById('Noof_Vechicles').value;
+
+ 
+ var Average_Monthly_Revenue = localStorage['Average_Monthly_Revenue'];
+//localStorage.removeItem( 'Average_Monthly_Revenue' );
+
+var NumberofVehicles = Noof_Vechicles;//localStorage['NumberofVehicles'];
+
+localStorage.removeItem( 'NumberofVehicles' );
+
+
+localStorage.setItem('NumberofVehicles', NumberofVehicles );
+	 
+var BillingRate_Customers = localStorage['BillingRate_Customers'];
+//localStorage.removeItem( 'BillingRate_Customers' );
+
+var payrate_employees = localStorage['payrate_employees'];
+//localStorage.removeItem( 'payrate_employees' );
+
+
+var estimated_MPG = localStorage['estimated_MPG'];
+//localStorage.removeItem( 'estimated_MPG' );
+
+
+var cost_of_a_gallon = localStorage['cost_of_a_gallon'];
+//localStorage.removeItem( 'cost_of_a_gallon' );
+
+var VehicleInvestment = localStorage['VehicleInvestment'];
+//localStorage.removeItem( 'VehicleInvestment' );
+
+var ratio = localStorage['ratio'];
+//localStorage.removeItem( 'ratio' );
+
+
+	     window.open("roi_result_detail.html","_self");
+	 
+}
+ var mndFileds=new Array('Company','First Name','Last Name','Phone','Email');
+ 	  var fldLangVal=new Array('Company','First Name','Last Name','Phone','Email');
+		var name='';
+		var email='';
+
+function checkMandatory() {
+	  //alert("yes");
+		for(i=0;i<mndFileds.length;i++) {
+		  var fieldObj=document.forms['WebToLeads400089000008439003'][mndFileds[i]];
+		  if(fieldObj) {
+			if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length==0) {
+			 if(fieldObj.type =='file')
+				{ 
+				 alert('Please select a file to upload.'); 
+				 fieldObj.focus(); 
+				 return false;
+				} 
+			alert(fldLangVal[i] +' cannot be empty.'); 
+   	   	  	  fieldObj.focus();
+   	   	  	  return false;
+			}  else if(fieldObj.nodeName=='SELECT') {
+  	   	   	 if(fieldObj.options[fieldObj.selectedIndex].value=='-None-') {
+				alert(fldLangVal[i] +' cannot be none.'); 
+				fieldObj.focus();
+				return false;
+			   }
+			} else if(fieldObj.type =='checkbox'){
+ 	 	 	 if(fieldObj.checked == false){
+				alert('Please accept  '+fldLangVal[i]);
+				fieldObj.focus();
+				return false;
+			   } 
+			 } 
+			 try {
+			     if(fieldObj.name == 'Last Name') {
+				name = fieldObj.value;
+ 	 	 	    
+	     		}
+			} catch (e) {}
+		    }
+		}
+
+// var Noof_Vechicles = document.getElementById('Noof_Vechicles').value;
+
+ 
+ var Average_Monthly_Revenue = localStorage['Average_Monthly_Revenue'];
+//localStorage.removeItem( 'Average_Monthly_Revenue' );
+
+var NumberofVehicles = localStorage['NumberofVehicles'];//Noof_Vechicles;//localStorage['NumberofVehicles'];
+
+//localStorage.removeItem( 'NumberofVehicles' );
+
+
+localStorage.setItem('NumberofVehicles', NumberofVehicles );
+	 
+var BillingRate_Customers = localStorage['BillingRate_Customers'];
+//localStorage.removeItem( 'BillingRate_Customers' );
+
+var payrate_employees = localStorage['payrate_employees'];
+//localStorage.removeItem( 'payrate_employees' );
+
+
+var estimated_MPG = localStorage['estimated_MPG'];
+//localStorage.removeItem( 'estimated_MPG' );
+
+
+var cost_of_a_gallon = localStorage['cost_of_a_gallon'];
+//localStorage.removeItem( 'cost_of_a_gallon' );
+
+var VehicleInvestment = localStorage['VehicleInvestment'];
+//localStorage.removeItem( 'VehicleInvestment' );
+
+var ratio = localStorage['ratio'];
+//alert(Average_Monthly_Revenue+" "+NumberofVehicles+" "+BillingRate_Customers+" "+payrate_employees+" "+estimated_MPG+" "+cost_of_a_gallon+" "+VehicleInvestment+" "+ratio)
+	window.open("roi_result_detail.html","_self");
+		
+	     }
+	 
+ /*       function ShowAll()
+        {
+                var connection = new ActiveXObject("ADODB.Connection");
+
+				var connectionstring= "Provider=Microsoft.Jet.OLEDB.4.0;Data Source = C:\\Users\\Umer\\Desktop\\WebSite5\\db.mdb;Persist Security Info=False";
+                connection.Open(connectionstring);
+                var rs = new ActiveXObject("ADODB.Recordset");
+                rs.Open("select * from roi ", connection);
+                rs.MoveFirst();
+                
+		            var vehicle = 0;// document.getElementById('vehicles').value;
+                    var driverhour = 0;//document.getElementById('Rev_hbox').value;
+					var driverrate = 0;//document.getElementById('Rev_bbox').value;
+					var labouravghour = 0;//document.getElementById('Rev_hbox1').value;
+					var labourpayred = 0;//document.getElementById('Rev_bbox1').value;
+					var officeavghour = 0;//document.getElementById('Rev_hbox2').value;
+					var officepayred = 0;//document.getElementById('Rev_bbox3').value;
+					var partsold = 0;//document.getElementById('Rev_hbox3').value;
+					var missedrev = 0;//document.getElementById('Rev_bbox5').value;
+					var vehicletravel = 0;//document.getElementById('Rev_hbox4').value;
+					var vehicleminutes = 0;//document.getElementById('Rev_bbox6').value;
+					var vehicleMPG = 0;//document.getElementById('Rev_bbox8').value;
+					var fuelcost = 0;//document.getElementById('Rev_bbox9').value;
+					var labourpaid = 0;//document.getElementById('labourpaid').value;
+					var labourofficepaid = 0;//document.getElementById('labourofficepaid').value;
+					
+				//var span = document.createElement("span");
+                //span.style.color = "Blue";
+                //span.innerText = "  ID " + "  Name " + "  Salary" + " City ";
+                //document.body.appendChild(span);
+                while (!rs.eof)
+                {
+				
+                    //var span = document.createElement("span");
+                   // span.style.color = "green";
+                  //  span.innerText = "\n " + rs.fields(0) + " |  " + rs.fields(1) ;//+ " |  " + rs.fields(2) + " |  " + rs.fields(3);
+                //    document.body.appendChild(span);
+                    
+		             vehicle = rs.fields(0);
+                     driverhour = rs.fields(1);
+					 driverrate =  rs.fields(2);
+					 labouravghour = rs.fields(3);
+					 labourpayred = rs.fields(4);//document.getElementById('Rev_bbox1').value;
+					 officeavghour = rs.fields(5);//document.getElementById('Rev_hbox2').value;
+					 officepayred = rs.fields(6);//document.getElementById('Rev_bbox3').value;
+					 partsold = rs.fields(7);//document.getElementById('Rev_hbox3').value;
+					 missedrev = rs.fields(8);//document.getElementById('Rev_bbox5').value;
+					 vehicletravel = rs.fields(9);//document.getElementById('Rev_hbox4').value;
+					 vehicleminutes = rs.fields(10);//document.getElementById('Rev_bbox6').value;
+					 vehicleMPG = rs.fields(11);//document.getElementById('Rev_bbox8').value;
+					 fuelcost = rs.fields(12);//document.getElementById('Rev_bbox9').value;
+					 labourpaid = rs.fields(14);//document.getElementById('labourpaid').value;
+					 labourofficepaid = rs.fields(15);//document.getElementById('labourofficepaid').value;
+
+			//	alert( vehicle * driverhour * driverrate);
+				     document.getElementById('Rev_hbox').value = vehicle * driverhour * driverrate;
+                    if (labourpaid == "Hourly")
+                        
+                   document.getElementById('Rev_hbox1').value = (1.5 * vehicle * labouravghour * labourpayred);
+                    if (labourpaid == "Overtime")
+                       
+                   document.getElementById('Rev_hbox1').value= (1 * vehicle * labouravghour * labourpayred);
+
+
+                    if (labourofficepaid == "Hourly")
+                       
+                   document.getElementById('Rev_hbox2').value = (1.5 * vehicle * officeavghour * officepayred);
+                    if (labourofficepaid == "Overtime")
+                        document.getElementById('Rev_hbox2').value = (1 * vehicle * officeavghour * officepayred);
+
+                     document.getElementById('Rev_hbox3').value = (partsold * missedrev);
+
+                  
+                     document.getElementById('Rev_bbox5').value = (partsold * missedrev);
+
+
+                      document.getElementById('Rev_hbox4').value = (fuelcost * ((vehicle* vehicletravel)/ vehicleMPG)*(365/12)+((((vehicle*vehicleminutes)/(60*25))/vehicleMPG)*fuelcost)*(365/12));
+
+					rs.MoveNext();
+                }
+				
+				
+					
+                rs.close();
+                connection.close();
+              
+            }  */
+			  window.onload = page;
+    </script>
+ 
+	
+</head>
+
+<body style="height: 431px">
+
+</br>
+    	
+
+
+<table id="box-table-E" summary="LABOURCOST  (Field Employees)">
+<tr>
+    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp 
+        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp 
+        	<h4> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp 
+          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp 
+                    RATION BETWEEN Complete Monthly Savings AND  Complete Monthly Investment<h4>
+          
+          
+    </tr>	
+	
+		 <tr>
+           
+
+        	<td>
+		 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp 
+	
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp 
+    
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp 
+        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp 
+        <label id="RatioInvestment"  style="height:20px;width:280px;"></label>
+		</p></td>
+    
+    </tr>
+	
+	
+</table>
+
+
+
+
+	
+</form>
+<!-- Note :
+   - You can modify the font style and form style to suit your website. 
+   - Code lines with comments “Do not remove this code”  are required for the form to work properly, make sure that you do not remove these lines of code. 
+   - The Mandatory check script can modified as to suit your business needs. 
+   - It is important that you test the modified form before going live.-->
+   
+<div id='crmWebToEntityForm' style='width:600px;margin:auto;'>
+   <META HTTP-EQUIV ='content-type' CONTENT='text/html;charset=UTF-8'>
+   
+   <form action='https://crm.zoho.com/crm/WebToLeadForm' name=WebToLeads400089000008439003 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory()' accept-charset='UTF-8'>
+
+	 <!-- Do not remove this code. -->
+	<input type='text' style='display:none;' name='xnQsjsdp' value='0b93926f2753d4e1812ba2aaef592a7ed91363a0a5afbf8f934c05e0bb803a86'/>
+	<input type='hidden' name='zc_gad' id='zc_gad' value=''/>
+	<input type='text' style='display:none;' name='xmIwtLD' value='d7e09a4a4f8d90673270bc4f9fbc011750cc7ba85120e425322bfb9db8380b8d'/>
+	<input type='text' style='display:none;'  name='actionType' value='TGVhZHM='/>
+
+	<input type='text' style='display:none;' name='returnURL' value='https&#x3a;&#x2f;&#x2f;www.industrack.com&#x2f;roi-detailed-result&#x2f;' /> 
+	 <!-- Do not remove this code. -->
+	<style>
+		tr , td { 
+			padding:6px;
+			border-spacing:0px;
+			border-width:0px;
+			}
+	</style>
+	<table style='width:600px;background-color:white;color:black'>
+
+	<tr><td colspan='2' style='text-align:left;color:black;font-family:Arial;font-size:14px;'><strong>ROI Calculator Form</strong></td></tr>
+
+	<tr><td  style='nowrap:nowrap;text-align:left;font-size:12px;font-family:Arial;width:200px;'>First Name<span style='color:red;'>*</span></td><td style='width:250px;' ><input type='text' style='width:250px;'  maxlength='40' name='First Name' /></td></tr>
+
+	<tr><td  style='nowrap:nowrap;text-align:left;font-size:12px;font-family:Arial;width:200px;'>Last Name<span style='color:red;'>*</span></td><td style='width:250px;' ><input type='text' style='width:250px;'  maxlength='80' name='Last Name' /></td></tr>
+
+	<tr><td  style='nowrap:nowrap;text-align:left;font-size:12px;font-family:Arial;width:200px;'>Company<span style='color:red;'>*</span></td><td style='width:250px;' ><input type='text' style='width:250px;'  maxlength='100' name='Company' /></td></tr>
+
+	<tr><td  style='nowrap:nowrap;text-align:left;font-size:12px;font-family:Arial;width:200px;'>Email<span style='color:red;'>*</span></td><td style='width:250px;' ><input type='text' style='width:250px;'  maxlength='100' name='Email' /></td></tr>
+
+	<tr><td  style='nowrap:nowrap;text-align:left;font-size:12px;font-family:Arial;width:200px;'>Phone<span style='color:red;'>*</span></td><td style='width:250px;' ><input type='text' style='width:250px;'  maxlength='30' name='Phone' /></td></tr>
+
+	<tr><td colspan='2' style='text-align:center; padding-top:15px;'>
+<!--		<input style='font-size:12px;color:#131307' type='submit' value='Submit' />  -->
+
+		<input id="ShowRecord" style='font-size:12px;color:#131307'type="button" value="Submit" onclick="checkMandatory()" />
+
+		<input type='reset' style='font-size:12px;color:#131307' value='Reset' />
+	    </td>
+	</tr>
+   </table>
+
+	</form>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!-- <input id="ShowRecord" type="button" value="BACK" onclick="backpage()" style="background-color:lightblue;width:100px;height:30px;font-family:Lucida Sans Unicode;font-size:15px"/>
+
+	
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+ <input id="ShowRecord1" type="button" value="Submit" onclick="submitrecord()" style="background-color:lightblue;width:100px;height:30px;font-family:Lucida Sans Unicode;font-size:15px"/>
+-->	
+	
+	</br>
+			
+			</br>
+			</br>
+			</br>
+	
+
+
+
+
+   </body>
+</html>
